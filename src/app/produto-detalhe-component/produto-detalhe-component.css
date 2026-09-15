@@ -1,0 +1,16 @@
+.detalhes-card, .error-box {
+  border: 1px solid #ccc;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+}
+
+.btn-back {
+  display: inline-block;
+  margin-top: 15px;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}

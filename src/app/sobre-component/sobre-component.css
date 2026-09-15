@@ -1,0 +1,13 @@
+.sobre-container {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.info-aluno {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #ecf0f1;
+  border-left: 5px solid #2980b9;
+  border-radius: 4px;
+}

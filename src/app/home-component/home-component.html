@@ -1,0 +1,12 @@
+<div class="home-container">
+  <h2>Bem-vindo à nossa Loja!</h2>
+  
+  <button (click)="toggleBanner()" class="btn-toggle">
+    {{ showBanner ? 'Ocultar Banner' : 'Mostrar Banner' }}
+  </button>
+
+  <div *ngIf="showBanner" class="promo-banner">
+    <h3>🔥 Oferta Especial de Inauguração!</h3>
+    <p>Aproveite até 30% de desconto em produtos selecionados.</p>
+  </div>
+</div>

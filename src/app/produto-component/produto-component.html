@@ -1,0 +1,26 @@
+<h2>Lista de Produtos</h2>
+
+<!-- Mensagem quando a lista estiver vazia -->
+<div *ngIf="produtos.length === 0" class="empty-msg">
+  <p>Nenhum produto disponível no momento.</p>
+</div>
+
+<!-- Grid de Produtos -->
+<div *ngIf="produtos.length > 0" class="product-grid">
+  <div *ngFor="let item of produtos" class="product-card">
+    <h3>{{ item.nome }}</h3>
+    <p class="price">R$ {{ item.preco.toFixed(2) }}</p>
+    <p>{{ item.descricao }}</p>
+    
+    <span class="stock-tag" [ngClass]="item.emEstoque ? 'in-stock' : 'out-stock'">
+      {{ item.emEstoque ? 'Em Estoque' : 'Fora de Estoque' }}
+    </span>
+
+    <button 
+      (click)="comprar(item.id)" 
+      [disabled]="!item.emEstoque" 
+      [ngClass]="{'btn-buy': item.emEstoque, 'btn-disabled': !item.emEstoque}">
+      Comprar
+    </button>
+  </div>
+</div>

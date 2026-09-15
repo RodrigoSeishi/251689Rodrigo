@@ -1,0 +1,21 @@
+<div class="detalhes-card" *ngIf="produto; else naoEncontrado">
+  <h2>{{ produto.nome }}</h2>
+  <hr />
+  <p><strong>ID do Produto:</strong> {{ produto.id }}</p>
+  <p><strong>Descrição:</strong> {{ produto.descricao }}</p>
+  <p><strong>Preço:</strong> R$ {{ produto.preco.toFixed(2) }}</p>
+  <p><strong>Status:</strong> 
+    <span [style.color]="produto.emEstoque ? 'green' : 'red'">
+      {{ produto.emEstoque ? 'Disponível em Estoque' : 'Indisponível' }}
+    </span>
+  </p>
+  <a routerLink="/produtos" class="btn-back">← Voltar para Produtos</a>
+</div>
+
+<ng-template #naoEncontrado>
+  <div class="error-box">
+    <h2>Produto não encontrado!</h2>
+    <p>O produto com ID {{ produtoId }} não existe em nosso catálogo.</p>
+    <a routerLink="/produtos" class="btn-back">Voltar para Produtos</a>
+  </div>
+</ng-template>
